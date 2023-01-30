@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BAC78112987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC78102987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift */; };
+		2BAC7813298786AE001D5639 /* AppModel+PredefineLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC7812298786AE001D5639 /* AppModel+PredefineLocations.swift */; };
+		2BAC7815298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC7814298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift */; };
+		2BAC781929878773001D5639 /* CLLocationCoordinate2D+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC781829878773001D5639 /* CLLocationCoordinate2D+Utils.swift */; };
+		2BAC781B29878780001D5639 /* CLCircularRegion+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */; };
 		F3434902297251AD00E5FE3F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3434901297251AD00E5FE3F /* App.swift */; };
 		F3434904297251AD00E5FE3F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3434903297251AD00E5FE3F /* Persistence.swift */; };
 		F3434907297251AD00E5FE3F /* LocationReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3434905297251AD00E5FE3F /* LocationReminder.xcdatamodeld */; };
@@ -19,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BAC780E29878203001D5639 /* TestLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TestLocation.gpx; sourceTree = "<group>"; };
+		2BAC78102987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModel+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
+		2BAC7812298786AE001D5639 /* AppModel+PredefineLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModel+PredefineLocations.swift"; sourceTree = "<group>"; };
+		2BAC7814298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModel+UNUserNotificationCenterDelegate.swift"; sourceTree = "<group>"; };
+		2BAC781829878773001D5639 /* CLLocationCoordinate2D+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Utils.swift"; sourceTree = "<group>"; };
+		2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLCircularRegion+Utils.swift"; sourceTree = "<group>"; };
 		F34348FE297251AD00E5FE3F /* LocationReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3434901297251AD00E5FE3F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F3434903297251AD00E5FE3F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -44,6 +55,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BAC781629878712001D5639 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F34349182972604200E5FE3F /* AppModel.swift */,
+				2BAC78102987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift */,
+				2BAC7812298786AE001D5639 /* AppModel+PredefineLocations.swift */,
+				2BAC7814298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2BAC781729878727001D5639 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F34349152972525D00E5FE3F /* MapPage.swift */,
+				F3A64FED297297AC00F34730 /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BAC781C29878784001D5639 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */,
+				2BAC781829878773001D5639 /* CLLocationCoordinate2D+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		F34348F5297251AD00E5FE3F = {
 			isa = PBXGroup;
 			children = (
@@ -63,16 +103,17 @@
 		F3434900297251AD00E5FE3F /* LocationReminder */ = {
 			isa = PBXGroup;
 			children = (
-				F3434917297257B400E5FE3F /* Info.plist */,
 				F3434901297251AD00E5FE3F /* App.swift */,
-				F34349152972525D00E5FE3F /* MapPage.swift */,
-				F3A64FED297297AC00F34730 /* MapView.swift */,
-				F34349182972604200E5FE3F /* AppModel.swift */,
-				F3434903297251AD00E5FE3F /* Persistence.swift */,
-				F3434908297251AD00E5FE3F /* ContentView.swift */,
+				2BAC781629878712001D5639 /* Models */,
+				2BAC781729878727001D5639 /* Views */,
+				2BAC781C29878784001D5639 /* Utils */,
 				F343490A297251AE00E5FE3F /* Assets.xcassets */,
+				F3434917297257B400E5FE3F /* Info.plist */,
 				F343490C297251AE00E5FE3F /* LocationReminder.entitlements */,
 				F3434905297251AD00E5FE3F /* LocationReminder.xcdatamodeld */,
+				F3434908297251AD00E5FE3F /* ContentView.swift */,
+				F3434903297251AD00E5FE3F /* Persistence.swift */,
+				2BAC780E29878203001D5639 /* TestLocation.gpx */,
 				F343490D297251AE00E5FE3F /* Preview Content */,
 			);
 			path = LocationReminder;
@@ -114,7 +155,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					F34348FD297251AD00E5FE3F = {
 						CreatedOnToolsVersion = 14.1;
@@ -160,9 +201,14 @@
 				F3A64FEE297297AC00F34730 /* MapView.swift in Sources */,
 				F34349192972604200E5FE3F /* AppModel.swift in Sources */,
 				F3434904297251AD00E5FE3F /* Persistence.swift in Sources */,
+				2BAC7815298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift in Sources */,
 				F3434909297251AD00E5FE3F /* ContentView.swift in Sources */,
+				2BAC781929878773001D5639 /* CLLocationCoordinate2D+Utils.swift in Sources */,
 				F34349162972525D00E5FE3F /* MapPage.swift in Sources */,
+				2BAC78112987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift in Sources */,
 				F3434907297251AD00E5FE3F /* LocationReminder.xcdatamodeld in Sources */,
+				2BAC7813298786AE001D5639 /* AppModel+PredefineLocations.swift in Sources */,
+				2BAC781B29878780001D5639 /* CLCircularRegion+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +248,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -260,6 +307,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -284,8 +332,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LocationReminder/LocationReminder.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"LocationReminder/Preview Content\"";
 				DEVELOPMENT_TEAM = 2N62934Y28;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -328,8 +380,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LocationReminder/LocationReminder.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"LocationReminder/Preview Content\"";
 				DEVELOPMENT_TEAM = 2N62934Y28;
 				ENABLE_HARDENED_RUNTIME = YES;

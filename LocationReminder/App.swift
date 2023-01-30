@@ -16,8 +16,6 @@ struct LocationReminderApp: App {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             MapPage().environmentObject(appModel)
-                
-
         }
     }
 }

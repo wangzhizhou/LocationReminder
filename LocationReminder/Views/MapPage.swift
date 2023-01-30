@@ -26,9 +26,6 @@ struct MapPage: View {
                 userLocation: $appModel.userLocation
         )
         .ignoresSafeArea()
-        .onAppear {
-            appModel.start()
-        }
         .alert("提示", isPresented: $appModel.showAlert) {
         } message: {
             if let alertMessage = appModel.alertMessage {
@@ -58,7 +55,8 @@ struct MapPage: View {
         }
         .overlay(alignment: .bottomLeading) {
             Button {
-                appModel.triggerNotification("test")
+//                appModel.triggerNotification("test")
+                appModel.showCurrentUserLocation()
             } label: {
                 Text("Test")
                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
@@ -89,6 +87,10 @@ struct MapPage: View {
             .background(.white.opacity(0.4))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(EdgeInsets(top: 44, leading: 5, bottom: 0, trailing: 0))
+        }
+        .onAppear {
+            appModel.monitorRegion()
+            appModel.startWork()
         }
     }
 }

@@ -14,30 +14,19 @@ class AppModel: NSObject, ObservableObject {
     @Published var userTrackModel: MKUserTrackingMode = .follow
     @Published var showUserLocation: Bool = true
     @Published var mapType: MapType = .standard
-    var userLocation: MKUserLocation?
-    
+    @Published var userLocation: MKUserLocation?
     @Published var showAlert: Bool = false
-    
     var alertMessage: String? { didSet { showAlert = alertMessage != nil } }
     
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
-        
-        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         manager.distanceFilter = kCLDistanceFilterNone
         manager.allowsBackgroundLocationUpdates = true
         manager.pausesLocationUpdatesAutomatically = true
         manager.delegate = self
-        
-        manager.requestAlwaysAuthorization()
-        
         return manager
     }()
-    
-    func start() {
-        monitorRegion()
-        startWork()
-    }
     
     func monitorRegion() {
         [
@@ -54,5 +43,17 @@ class AppModel: NSObject, ObservableObject {
     
     func stopWork() {
         locationManager.stopUpdatingLocation()
+    }
+}
+
+extension AppModel {
+    
+    func showCurrentUserLocation() {
+        guard let location = userLocation?.location?.coordinate
+        else {
+            return
+        }
+        alertMessage = "\(location.latitude), \(location.longitude)"
+        UIPasteboard.general.string = alertMessage
     }
 }

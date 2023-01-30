@@ -9,11 +9,15 @@ import UserNotifications
 
 extension AppModel: UNUserNotificationCenterDelegate {
     
+    func requestNotificationPermission(notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current(), completionHandler: @escaping (Bool, Error?) -> Void) {
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: completionHandler)
+    }
+    
     func triggerNotification(_ message: String) {
         
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self
-        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) {[weak self] granted, error in
+        requestNotificationPermission(notificationCenter: notificationCenter) { [weak self] granted, error in
             
             if let error = error {
                 self?.alertMessage = error.localizedDescription

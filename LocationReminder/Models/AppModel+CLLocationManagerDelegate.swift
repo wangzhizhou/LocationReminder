@@ -9,7 +9,27 @@ import CoreLocation
 
 extension AppModel: CLLocationManagerDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .notDetermined, .restricted:
+            manager.requestAlwaysAuthorization()
+        case .denied:
+            if CLLocationManager.locationServicesEnabled() {
+                alertMessage = "您拒绝开启定位功能，App不能正常使用"
+            } else {
+                alertMessage = "定位服务不可用，App不能正常使用"
+            }
+        case .authorizedAlways, .authorizedWhenInUse:
+            requestNotificationPermission { [weak self] granted, error in
+                guard granted
+                else {
+                    self?.alertMessage = "需要授权推送，才能接收到位置提醒"
+                    return
+                }
+            }
+        default:
+            break
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

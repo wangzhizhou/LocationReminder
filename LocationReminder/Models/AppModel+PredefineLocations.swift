@@ -13,6 +13,6 @@ extension AppModel {
     static let tianGongYuan = CLLocationCoordinate2D(latitude: 39.67033980945019, longitude: 116.31994527297164)
         .clRegion(identifier: "tianGongYuan", radius: 200)
     
-    static let home = CLLocationCoordinate2D(latitude: 39.63208038359735, longitude: 116.3086718133749)
+    static let home = CLLocationCoordinate2D(latitude: 39.63189214660146, longitude: 116.30884228511107)
         .clRegion(identifier: "home", radius: 20)
 }

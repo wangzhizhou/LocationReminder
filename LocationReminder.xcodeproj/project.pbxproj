@@ -345,9 +345,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationReminder/Info.plist;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "获取地理位置进行位置提醒";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "获取地理位置进行位置提醒";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "获取地理位置进行位置提醒";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "获取地理位置信息";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "一直获取地理位置信息，无论应用是否在使用";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "仅在应用使用时获取地理位置信息";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -393,9 +393,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationReminder/Info.plist;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "获取地理位置进行位置提醒";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "获取地理位置进行位置提醒";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "获取地理位置进行位置提醒";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "获取地理位置信息";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "一直获取地理位置信息，无论应用是否在使用";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "仅在应用使用时获取地理位置信息";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -33,7 +33,7 @@
 		2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLCircularRegion+Utils.swift"; sourceTree = "<group>"; };
 		2BAC846D2988DAFB001D5639 /* Company.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Company.gpx; sourceTree = "<group>"; };
 		2BAC8C6B2989180D001D5639 /* LocationTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTransform.swift; sourceTree = "<group>"; };
-		F34348FE297251AD00E5FE3F /* LocationReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34348FE297251AD00E5FE3F /* 位置提醒.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "位置提醒.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3434901297251AD00E5FE3F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F3434903297251AD00E5FE3F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F3434906297251AD00E5FE3F /* LocationReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationReminder.xcdatamodel; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		F34348FF297251AD00E5FE3F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F34348FE297251AD00E5FE3F /* LocationReminder.app */,
+				F34348FE297251AD00E5FE3F /* 位置提醒.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 			);
 			name = LocationReminder;
 			productName = LocationReminder;
-			productReference = F34348FE297251AD00E5FE3F /* LocationReminder.app */;
+			productReference = F34348FE297251AD00E5FE3F /* 位置提醒.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -359,6 +359,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationReminder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "获取地理位置信息";
@@ -383,7 +384,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.LocationReminder;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "位置提醒";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -413,6 +414,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationReminder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "获取地理位置信息";
@@ -437,7 +439,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.LocationReminder;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "位置提醒";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

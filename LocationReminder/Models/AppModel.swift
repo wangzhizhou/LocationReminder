@@ -40,6 +40,7 @@ class AppModel: NSObject, ObservableObject {
     private let monitorRegions: [CLRegion] = [
         tianGongYuan,
         home,
+        company,
     ]
     
     func startWork() {
@@ -53,6 +54,7 @@ class AppModel: NSObject, ObservableObject {
     }
     
     func startMonitorRegion() {
+        stopMonitorRegion()
         monitorRegions.forEach { locationManager.startMonitoring(for: $0) }
     }
     

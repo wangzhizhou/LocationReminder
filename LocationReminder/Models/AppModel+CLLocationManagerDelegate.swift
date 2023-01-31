@@ -40,12 +40,12 @@ extension AppModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        let message = "didEnterRegion: \(region.identifier)"
+        let message = "进入区域: \(region.identifier)"
         triggerNotification(message)
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        let message = "didExitRegion: \(region.identifier)"
+        let message = "离开区域: \(region.identifier)"
         triggerNotification(message)
     }
 }

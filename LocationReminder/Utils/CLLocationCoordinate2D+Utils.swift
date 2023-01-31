@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import MapKit
 
 extension CLLocationCoordinate2D {
     
@@ -22,4 +23,6 @@ extension CLLocationCoordinate2D {
         let (gcjLat, gcjLon) = LocationTransform.wgs2gcj(wgsLat: latitude, wgsLng: longitude)
         return CLLocationCoordinate2D(latitude: gcjLat, longitude: gcjLon)
     }
+    
+    var mkCoordianteRegion: MKCoordinateRegion { MKCoordinateRegion(center: self, latitudinalMeters: 750, longitudinalMeters: 750) }
 }

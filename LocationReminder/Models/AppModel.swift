@@ -15,7 +15,13 @@ class AppModel: NSObject, ObservableObject {
     @Published var showAlert: Bool = false
     /// 中国区为 GCJ-02 坐标
     /// 参考： https://abstractkitchen.com/blog/a-short-guide-to-chinese-coordinate-system/
-    var userMKLocation: MKUserLocation?
+    var userMKLocation: MKUserLocation? {
+        willSet {
+            if userMKLocation == nil, newValue != nil, let coordinate = newValue?.coordinate {
+                displayRegion = coordinate.mkCoordianteRegion
+            }
+        }
+    }
     /// WGS-84 坐标
     var userWGSCoordinate: CLLocationCoordinate2D? {
         guard let userLocationCoordinate = userMKLocation?.location?.coordinate
@@ -67,7 +73,7 @@ class AppModel: NSObject, ObservableObject {
         else {
             return
         }
-        displayRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
+        displayRegion = coordinate.mkCoordianteRegion
     }
 }
 

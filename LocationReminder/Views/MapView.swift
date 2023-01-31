@@ -13,7 +13,7 @@ struct MapView: UIViewRepresentable {
     
     @EnvironmentObject private var appModel: AppModel
     
-    @Binding var region: MKCoordinateRegion
+    @Binding var displayRegion: MKCoordinateRegion
     
     @Binding var userTrackingMode: MKUserTrackingMode
     
@@ -24,7 +24,6 @@ struct MapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
-        mapView.region = region
         mapView.userTrackingMode = userTrackingMode
         mapView.showsUserLocation = showUserLocation
         context.coordinator.uiMKMapView = mapView
@@ -32,7 +31,7 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ mapView: MKMapView, context: Context) {
-        mapView.region = region
+        mapView.region = displayRegion
     }
     
     func makeCoordinator() -> Coordinator {
@@ -60,7 +59,7 @@ struct MapView_Previews: PreviewProvider {
     @ObservedObject static var appModel = AppModel()
     
     static var previews: some View {
-        MapView(region: $appModel.displayRegion,
+        MapView(displayRegion: $appModel.displayRegion,
                 userTrackingMode: $appModel.userTrackModel,
                 showUserLocation: $appModel.showUserLocation
         ).environmentObject(appModel)

@@ -9,7 +9,7 @@ import MapKit
 
 class AppModel: NSObject, ObservableObject {
     
-    @Published var displayRegion: MKCoordinateRegion = home.coordianteRegion
+    @Published var displayRegion: MKCoordinateRegion = home.mkCoordianteRegion
     @Published var userTrackModel: MKUserTrackingMode = .follow
     @Published var showUserLocation: Bool = true
     @Published var mapType: MapType = .standard

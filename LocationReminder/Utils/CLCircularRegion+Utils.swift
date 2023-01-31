@@ -8,5 +8,5 @@
 import MapKit
 
 extension CLCircularRegion {
-    var coordianteRegion: MKCoordinateRegion { MKCoordinateRegion(center: self.center, latitudinalMeters: self.radius, longitudinalMeters: self.radius) }
+    var mkCoordianteRegion: MKCoordinateRegion { MKCoordinateRegion(center: self.center, latitudinalMeters: self.radius, longitudinalMeters: self.radius) }
 }

@@ -19,8 +19,7 @@ struct MapPage: View {
     @EnvironmentObject private var appModel: AppModel
 
     var body: some View {
-        MapView(configuration: $appModel.configuration,
-                region: $appModel.displayRegion,
+        MapView(region: $appModel.displayRegion,
                 userTrackingMode: $appModel.userTrackModel,
                 showUserLocation: $appModel.showUserLocation,
                 userLocation: $appModel.userLocation

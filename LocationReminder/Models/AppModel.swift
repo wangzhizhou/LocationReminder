@@ -9,8 +9,7 @@ import MapKit
 
 class AppModel: NSObject, ObservableObject {
     
-    @Published var configuration: MKMapConfiguration = MKStandardMapConfiguration()
-    @Published var displayRegion: MKCoordinateRegion = .init()
+    @Published var displayRegion: MKCoordinateRegion = home.coordianteRegion
     @Published var userTrackModel: MKUserTrackingMode = .follow
     @Published var showUserLocation: Bool = true
     @Published var mapType: MapType = .standard
@@ -24,6 +23,7 @@ class AppModel: NSObject, ObservableObject {
         manager.distanceFilter = kCLDistanceFilterNone
         manager.allowsBackgroundLocationUpdates = true
         manager.pausesLocationUpdatesAutomatically = true
+        manager.showsBackgroundLocationIndicator = true
         manager.delegate = self
         return manager
     }()

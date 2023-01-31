@@ -12,14 +12,16 @@ extension AppModel: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
         case .notDetermined, .restricted:
-            manager.requestAlwaysAuthorization()
+            manager.requestWhenInUseAuthorization()
         case .denied:
             if CLLocationManager.locationServicesEnabled() {
                 alertMessage = "您拒绝开启定位功能，App不能正常使用"
             } else {
                 alertMessage = "定位服务不可用，App不能正常使用"
             }
-        case .authorizedAlways, .authorizedWhenInUse:
+        case .authorizedWhenInUse:
+            manager.requestAlwaysAuthorization()
+        case .authorizedAlways:
             requestNotificationPermission { [weak self] granted, error in
                 guard granted
                 else {

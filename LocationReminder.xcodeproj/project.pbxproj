@@ -12,6 +12,7 @@
 		2BAC7815298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC7814298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift */; };
 		2BAC781929878773001D5639 /* CLLocationCoordinate2D+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC781829878773001D5639 /* CLLocationCoordinate2D+Utils.swift */; };
 		2BAC781B29878780001D5639 /* CLCircularRegion+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */; };
+		2BAC8C6C2989180D001D5639 /* LocationTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC8C6B2989180D001D5639 /* LocationTransform.swift */; };
 		F3434902297251AD00E5FE3F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3434901297251AD00E5FE3F /* App.swift */; };
 		F3434904297251AD00E5FE3F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3434903297251AD00E5FE3F /* Persistence.swift */; };
 		F3434907297251AD00E5FE3F /* LocationReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3434905297251AD00E5FE3F /* LocationReminder.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 		2BAC781829878773001D5639 /* CLLocationCoordinate2D+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Utils.swift"; sourceTree = "<group>"; };
 		2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLCircularRegion+Utils.swift"; sourceTree = "<group>"; };
 		2BAC846D2988DAFB001D5639 /* Company.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Company.gpx; sourceTree = "<group>"; };
+		2BAC8C6B2989180D001D5639 /* LocationTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTransform.swift; sourceTree = "<group>"; };
 		F34348FE297251AD00E5FE3F /* LocationReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3434901297251AD00E5FE3F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F3434903297251AD00E5FE3F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		2BAC781C29878784001D5639 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2BAC8C6B2989180D001D5639 /* LocationTransform.swift */,
 				2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */,
 				2BAC781829878773001D5639 /* CLLocationCoordinate2D+Utils.swift */,
 			);
@@ -215,6 +218,7 @@
 				F3434909297251AD00E5FE3F /* ContentView.swift in Sources */,
 				2BAC781929878773001D5639 /* CLLocationCoordinate2D+Utils.swift in Sources */,
 				F34349162972525D00E5FE3F /* MapPage.swift in Sources */,
+				2BAC8C6C2989180D001D5639 /* LocationTransform.swift in Sources */,
 				2BAC78112987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift in Sources */,
 				F3434907297251AD00E5FE3F /* LocationReminder.xcdatamodeld in Sources */,
 				2BAC7813298786AE001D5639 /* AppModel+PredefineLocations.swift in Sources */,

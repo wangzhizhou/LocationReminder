@@ -13,7 +13,7 @@ struct MapView: UIViewRepresentable {
     
     @EnvironmentObject private var appModel: AppModel
     
-    @Binding var region: MKCoordinateRegion?
+    @Binding var region: MKCoordinateRegion
     
     @Binding var userTrackingMode: MKUserTrackingMode
     
@@ -31,10 +31,7 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ mapView: MKMapView, context: Context) {
-
-        if let region = region {
-            mapView.region = region
-        }
+        mapView.region = region
     }
     
     func makeCoordinator() -> Coordinator {

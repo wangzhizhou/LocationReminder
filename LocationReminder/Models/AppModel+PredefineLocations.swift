@@ -16,6 +16,7 @@ extension AppModel {
     static let home = CLLocationCoordinate2D(latitude: 39.63189214660146, longitude: 116.30884228511107)
         .clRegion(identifier: "home", radius: 50)
     
-    static let company = CLLocationCoordinate2D(latitude: 39.979600320577184, longitude: 116.36885811218218)
+    static let company = CLLocationCoordinate2D(latitude: 39.97824350429831, longitude: 116.36265953860611)
+        .wgs2gcj
         .clRegion(identifier: "company", radius: 50)
 }

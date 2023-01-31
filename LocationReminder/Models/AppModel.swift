@@ -9,14 +9,21 @@ import MapKit
 
 class AppModel: NSObject, ObservableObject {
     
-    @Published var displayRegion: MKCoordinateRegion? = .init()
+    @Published var displayRegion: MKCoordinateRegion = .init()
     @Published var userTrackModel: MKUserTrackingMode = .follow
     @Published var showUserLocation: Bool = true
     @Published var showAlert: Bool = false
     /// 中国区为 GCJ-02 坐标
+    /// 参考： https://abstractkitchen.com/blog/a-short-guide-to-chinese-coordinate-system/
     var userMKLocation: MKUserLocation?
     /// WGS-84 坐标
-    var userGPSLocation: CLLocation?
+    var userWGSCoordinate: CLLocationCoordinate2D? {
+        guard let userLocationCoordinate = userMKLocation?.location?.coordinate
+        else {
+            return nil
+        }
+        return userLocationCoordinate.gcj2wgs
+    }
     var alertMessage: String? { didSet { showAlert = alertMessage != nil } }
     
     private lazy var locationManager: CLLocationManager = {
@@ -65,13 +72,13 @@ class AppModel: NSObject, ObservableObject {
 extension AppModel {
     
     func showCurrentUserGPSLocation() {
-        guard let gpsLocation = userGPSLocation?.coordinate, let mkLocation = userMKLocation?.coordinate
+        guard let wgsCoordinate = userWGSCoordinate , let mkLocation = userMKLocation?.coordinate
         else {
             return
         }
         alertMessage = """
-GPS: \(gpsLocation.latitude), \(gpsLocation.longitude)
-MK : \(mkLocation.latitude), \(mkLocation.longitude)
+WGS-84: \(wgsCoordinate.latitude), \(wgsCoordinate.longitude)
+GCJ-02: \(mkLocation.latitude), \(mkLocation.longitude)
 """
         UIPasteboard.general.string = alertMessage
     }

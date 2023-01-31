@@ -44,6 +44,9 @@
 		F34349152972525D00E5FE3F /* MapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPage.swift; sourceTree = "<group>"; };
 		F3434917297257B400E5FE3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F34349182972604200E5FE3F /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		F3904C66298965CF0061C3E5 /* tiangongyuan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = tiangongyuan.gpx; sourceTree = "<group>"; };
+		F3904C6729896A300061C3E5 /* mudanyuan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mudanyuan.gpx; sourceTree = "<group>"; };
+		F3904C6829896A3E0061C3E5 /* xingong.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = xingong.gpx; sourceTree = "<group>"; };
 		F3A64FED297297AC00F34730 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +96,9 @@
 			children = (
 				2BAC780E29878203001D5639 /* Home.gpx */,
 				2BAC846D2988DAFB001D5639 /* Company.gpx */,
+				F3904C66298965CF0061C3E5 /* tiangongyuan.gpx */,
+				F3904C6729896A300061C3E5 /* mudanyuan.gpx */,
+				F3904C6829896A3E0061C3E5 /* xingong.gpx */,
 			);
 			path = TestGPSLocations;
 			sourceTree = "<group>";

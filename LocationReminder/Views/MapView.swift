@@ -27,6 +27,10 @@ struct MapView: UIViewRepresentable {
         mapView.userTrackingMode = userTrackingMode
         mapView.showsUserLocation = showUserLocation
         context.coordinator.uiMKMapView = mapView
+        
+//        let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.selectedLocation(tap:)))
+//        mapView.addGestureRecognizer(tapGesture)
+        
         return mapView
     }
     
@@ -50,6 +54,18 @@ struct MapView: UIViewRepresentable {
 
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
             self.parent.appModel.userMKLocation = userLocation
+        }
+        
+        @objc func selectedLocation(tap gesture: UITapGestureRecognizer) {
+            guard let uiMKMapView = self.uiMKMapView else {
+                return
+            }
+            let location = uiMKMapView.convert(gesture.location(in: uiMKMapView), toCoordinateFrom: uiMKMapView)
+            self.parent.appModel.alertMessage = """
+            GCJ-20: \(location.latitude), \(location.longitude)
+            WGS-84: \(location.gcj2wgs.latitude), \(location.gcj2wgs.longitude)
+            """
+            UIPasteboard.general.string = self.parent.appModel.alertMessage
         }
     }
 }

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F34348FD297251AD00E5FE3F"
-               BuildableName = "LocationReminder.app"
+               BuildableName = "&#x4f4d;&#x7f6e;&#x63d0;&#x9192;.app"
                BlueprintName = "LocationReminder"
                ReferencedContainer = "container:LocationReminder.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F34348FD297251AD00E5FE3F"
-            BuildableName = "LocationReminder.app"
+            BuildableName = "&#x4f4d;&#x7f6e;&#x63d0;&#x9192;.app"
             BlueprintName = "LocationReminder"
             ReferencedContainer = "container:LocationReminder.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F34348FD297251AD00E5FE3F"
-            BuildableName = "LocationReminder.app"
+            BuildableName = "&#x4f4d;&#x7f6e;&#x63d0;&#x9192;.app"
             BlueprintName = "LocationReminder"
             ReferencedContainer = "container:LocationReminder.xcodeproj">
          </BuildableReference>

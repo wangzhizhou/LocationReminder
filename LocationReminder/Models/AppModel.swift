@@ -44,6 +44,8 @@ class AppModel: NSObject, ObservableObject {
     }()
     
     private let monitorRegions: [CLRegion] = [
+        mudanyuan,
+        xingong,
         tianGongYuan,
         home,
         company,

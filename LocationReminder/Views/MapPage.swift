@@ -48,16 +48,16 @@ struct MapPage: View {
         //                }
         //            }.frame(height: 50)
         //        })
-        .overlay(alignment: .bottomLeading) {
-            Button {
-                //                appModel.triggerNotification("test")
-                appModel.showCurrentUserGPSLocation()
-            } label: {
-                Text("Test")
-                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-            }
-            .padding()
-        }
+//        .overlay(alignment: .bottomLeading) {
+//            Button {
+//                //                appModel.triggerNotification("test")
+//                appModel.showCurrentUserGPSLocation()
+//            } label: {
+//                Text("Test")
+//                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+//            }
+//            .padding()
+//        }
         //        .overlay(alignment: .topLeading) {
         //            VStack {
         //

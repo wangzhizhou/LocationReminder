@@ -14,6 +14,7 @@ extension AppModel: CLLocationManagerDelegate {
         case .notDetermined, .restricted:
             manager.requestWhenInUseAuthorization()
         case .denied:
+            stopWork()
             if CLLocationManager.locationServicesEnabled() {
                 alertMessage = "您拒绝开启定位功能，App不能正常使用"
             } else {

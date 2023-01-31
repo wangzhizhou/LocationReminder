@@ -13,20 +13,17 @@ struct MapView: UIViewRepresentable {
     
     @EnvironmentObject private var appModel: AppModel
     
-    @Binding var region: MKCoordinateRegion
+    @Binding var region: MKCoordinateRegion?
     
     @Binding var userTrackingMode: MKUserTrackingMode
     
     @Binding var showUserLocation: Bool
-    
-    @Binding var userLocation: MKUserLocation?
     
     typealias UIViewType = MKMapView
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
-        mapView.region = region
         mapView.userTrackingMode = userTrackingMode
         mapView.showsUserLocation = showUserLocation
         context.coordinator.uiMKMapView = mapView
@@ -37,6 +34,10 @@ struct MapView: UIViewRepresentable {
         // Update MKMapView
         if mapView.userTrackingMode != appModel.userTrackModel {
             mapView.userTrackingMode = appModel.userTrackModel
+        }
+        
+        if let region = region {
+            mapView.setRegion(region, animated: false)
         }
     }
     
@@ -63,15 +64,6 @@ struct MapView: UIViewRepresentable {
             UIPasteboard.general.string = self.parent.appModel.alertMessage
         }
         
-        func currentLocation() {
-            guard let uiMKMapView = self.uiMKMapView else {
-                return
-            }
-            let coordinate = uiMKMapView.userLocation.coordinate
-            let center = MKCoordinateRegion(center: coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
-            uiMKMapView.setRegion(center, animated: true)
-        }
-        
         // MARK: MKMapViewDelegate
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
             self.parent.appModel.userLocation = userLocation
@@ -86,8 +78,7 @@ struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView(region: $appModel.displayRegion,
                 userTrackingMode: $appModel.userTrackModel,
-                showUserLocation: $appModel.showUserLocation,
-                userLocation: $appModel.userLocation
+                showUserLocation: $appModel.showUserLocation
         ).environmentObject(appModel)
     }
 }

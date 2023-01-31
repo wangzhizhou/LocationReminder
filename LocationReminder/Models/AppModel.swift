@@ -9,12 +9,12 @@ import MapKit
 
 class AppModel: NSObject, ObservableObject {
     
-    @Published var displayRegion: MKCoordinateRegion = home.mkCoordianteRegion
+    @Published var displayRegion: MKCoordinateRegion?
     @Published var userTrackModel: MKUserTrackingMode = .follow
     @Published var showUserLocation: Bool = true
     @Published var mapType: MapType = .standard
-    @Published var userLocation: MKUserLocation?
     @Published var showAlert: Bool = false
+    var userLocation: MKUserLocation?
     var alertMessage: String? { didSet { showAlert = alertMessage != nil } }
     
     private lazy var locationManager: CLLocationManager = {
@@ -28,21 +28,35 @@ class AppModel: NSObject, ObservableObject {
         return manager
     }()
     
-    func monitorRegion() {
-        [
-            Self.tianGongYuan,
-            Self.home,
-        ].forEach { region in
-            locationManager.startMonitoring(for: region)
-        }
-    }
+    private let monitorRegions: [CLRegion] = [
+        tianGongYuan,
+        home,
+    ]
     
     func startWork() {
+        startMonitorRegion()
         locationManager.startUpdatingLocation()
     }
     
     func stopWork() {
+        stopMonitorRegion()
         locationManager.stopUpdatingLocation()
+    }
+    
+    func startMonitorRegion() {
+        monitorRegions.forEach { locationManager.startMonitoring(for: $0) }
+    }
+    
+    func stopMonitorRegion() {
+        locationManager.monitoredRegions.forEach { locationManager.stopMonitoring(for: $0) }
+    }
+    
+    func locateCurrentUser() {
+        guard let coordinate = userLocation?.coordinate
+        else {
+            return
+        }
+        displayRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
     }
 }
 

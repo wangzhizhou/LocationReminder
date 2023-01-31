@@ -8,12 +8,6 @@
 import SwiftUI
 import MapKit
 
-enum MapType: String {
-    case standard = "标准"
-    case imagery = "图像"
-    case hybrid = "混合"
-}
-
 struct MapPage: View {
     
     @EnvironmentObject private var appModel: AppModel
@@ -57,7 +51,7 @@ struct MapPage: View {
         .overlay(alignment: .bottomLeading) {
             Button {
                 //                appModel.triggerNotification("test")
-                appModel.showCurrentUserLocation()
+                appModel.showCurrentUserGPSLocation()
             } label: {
                 Text("Test")
                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))

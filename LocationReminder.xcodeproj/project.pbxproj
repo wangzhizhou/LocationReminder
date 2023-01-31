@@ -85,13 +85,13 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		2BAC846C2988DAED001D5639 /* TestLocations */ = {
+		2BAC846C2988DAED001D5639 /* TestGPSLocations */ = {
 			isa = PBXGroup;
 			children = (
 				2BAC780E29878203001D5639 /* Home.gpx */,
 				2BAC846D2988DAFB001D5639 /* Company.gpx */,
 			);
-			path = TestLocations;
+			path = TestGPSLocations;
 			sourceTree = "<group>";
 		};
 		F34348F5297251AD00E5FE3F = {
@@ -123,7 +123,7 @@
 				F3434905297251AD00E5FE3F /* LocationReminder.xcdatamodeld */,
 				F3434908297251AD00E5FE3F /* ContentView.swift */,
 				F3434903297251AD00E5FE3F /* Persistence.swift */,
-				2BAC846C2988DAED001D5639 /* TestLocations */,
+				2BAC846C2988DAED001D5639 /* TestGPSLocations */,
 				F343490D297251AE00E5FE3F /* Preview Content */,
 			);
 			path = LocationReminder;

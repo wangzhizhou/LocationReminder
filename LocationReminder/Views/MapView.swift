@@ -31,13 +31,9 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ mapView: MKMapView, context: Context) {
-        // Update MKMapView
-        if mapView.userTrackingMode != appModel.userTrackModel {
-            mapView.userTrackingMode = appModel.userTrackModel
-        }
-        
+
         if let region = region {
-            mapView.centerCoordinate = region.center
+            mapView.region = region
         }
     }
     
@@ -54,19 +50,9 @@ struct MapView: UIViewRepresentable {
         init(parent: MapView) {
             self.parent = parent
         }
-        
-        func selectedLocation(tap gesture: UITapGestureRecognizer) {
-            guard let uiMKMapView = self.uiMKMapView else {
-                return
-            }
-            let location = uiMKMapView.convert(gesture.location(in: uiMKMapView), toCoordinateFrom: uiMKMapView)
-            self.parent.appModel.alertMessage = "\(location.latitude), \(location.longitude)"
-            UIPasteboard.general.string = self.parent.appModel.alertMessage
-        }
-        
-        // MARK: MKMapViewDelegate
+
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-            self.parent.appModel.userLocation = userLocation
+            self.parent.appModel.userMKLocation = userLocation
         }
     }
 }

@@ -9,12 +9,14 @@ import MapKit
 
 class AppModel: NSObject, ObservableObject {
     
-    @Published var displayRegion: MKCoordinateRegion?
+    @Published var displayRegion: MKCoordinateRegion? = .init()
     @Published var userTrackModel: MKUserTrackingMode = .follow
     @Published var showUserLocation: Bool = true
-    @Published var mapType: MapType = .standard
     @Published var showAlert: Bool = false
-    var userLocation: MKUserLocation?
+    /// 中国区为 GCJ-02 坐标
+    var userMKLocation: MKUserLocation?
+    /// WGS-84 坐标
+    var userGPSLocation: CLLocation?
     var alertMessage: String? { didSet { showAlert = alertMessage != nil } }
     
     private lazy var locationManager: CLLocationManager = {
@@ -52,7 +54,7 @@ class AppModel: NSObject, ObservableObject {
     }
     
     func locateCurrentUser() {
-        guard let coordinate = userLocation?.coordinate
+        guard let coordinate = userMKLocation?.coordinate
         else {
             return
         }
@@ -62,12 +64,15 @@ class AppModel: NSObject, ObservableObject {
 
 extension AppModel {
     
-    func showCurrentUserLocation() {
-        guard let location = userLocation?.location?.coordinate
+    func showCurrentUserGPSLocation() {
+        guard let gpsLocation = userGPSLocation?.coordinate, let mkLocation = userMKLocation?.coordinate
         else {
             return
         }
-        alertMessage = "\(location.latitude), \(location.longitude)"
+        alertMessage = """
+GPS: \(gpsLocation.latitude), \(gpsLocation.longitude)
+MK : \(mkLocation.latitude), \(mkLocation.longitude)
+"""
         UIPasteboard.general.string = alertMessage
     }
 }

@@ -37,7 +37,7 @@ struct MapView: UIViewRepresentable {
         }
         
         if let region = region {
-            mapView.setRegion(region, animated: false)
+            mapView.centerCoordinate = region.center
         }
     }
     

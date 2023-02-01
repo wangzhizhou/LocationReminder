@@ -10,7 +10,7 @@ import MapKit
 
 extension CLLocationCoordinate2D {
     
-    func clRegion(identifier: String, radius: CLLocationDistance) -> CLCircularRegion {
+    func clCircularRegion(identifier: String, radius: CLLocationDistance) -> CLCircularRegion {
         CLCircularRegion(center: self, radius: radius, identifier: identifier)
     }
     
@@ -24,5 +24,7 @@ extension CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: gcjLat, longitude: gcjLon)
     }
     
-    var mkCoordianteRegion: MKCoordinateRegion { MKCoordinateRegion(center: self, latitudinalMeters: 750, longitudinalMeters: 750) }
+    func mkCoordianteRegion(radius: CLLocationDistance = 500) -> MKCoordinateRegion {
+        MKCoordinateRegion(center: self, latitudinalMeters: radius, longitudinalMeters: radius)
+    }
 }

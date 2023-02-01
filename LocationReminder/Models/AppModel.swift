@@ -18,7 +18,7 @@ class AppModel: NSObject, ObservableObject {
     var userMKLocation: MKUserLocation? {
         willSet {
             if userMKLocation == nil, newValue != nil, let coordinate = newValue?.coordinate {
-                displayRegion = coordinate.mkCoordianteRegion
+                displayRegion = coordinate.mkCoordianteRegion()
             }
         }
     }
@@ -82,7 +82,7 @@ GCJ-02: \(mkLocation.latitude), \(mkLocation.longitude)
         else {
             return
         }
-        displayRegion = coordinate.mkCoordianteRegion
+        displayRegion = coordinate.mkCoordianteRegion()
     }
     
     func setupMonitorRegions() {

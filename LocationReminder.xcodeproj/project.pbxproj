@@ -14,6 +14,7 @@
 		2BAC8C6C2989180D001D5639 /* LocationTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC8C6B2989180D001D5639 /* LocationTransform.swift */; };
 		2BAC997E298A043D001D5639 /* LocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC997D298A043D001D5639 /* LocationInfoModel.swift */; };
 		2BAC9980298A0A20001D5639 /* LocationModel+Predefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC997F298A0A20001D5639 /* LocationModel+Predefine.swift */; };
+		2BB2E03C298A8C36009EA29E /* SearchResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2E03B298A8C36009EA29E /* SearchResultListView.swift */; };
 		F3434902297251AD00E5FE3F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3434901297251AD00E5FE3F /* App.swift */; };
 		F3434904297251AD00E5FE3F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3434903297251AD00E5FE3F /* Persistence.swift */; };
 		F3434907297251AD00E5FE3F /* LocationReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3434905297251AD00E5FE3F /* LocationReminder.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 		2BAC9981298A0FA0001D5639 /* tiangongyuan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = tiangongyuan.gpx; sourceTree = "<group>"; };
 		2BAC9982298A0FA0001D5639 /* xingong.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = xingong.gpx; sourceTree = "<group>"; };
 		2BAC9983298A0FA0001D5639 /* mudanyuan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mudanyuan.gpx; sourceTree = "<group>"; };
+		2BB2E03B298A8C36009EA29E /* SearchResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListView.swift; sourceTree = "<group>"; };
 		F34348FE297251AD00E5FE3F /* 位置提醒.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "位置提醒.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3434901297251AD00E5FE3F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F3434903297251AD00E5FE3F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				F34349152972525D00E5FE3F /* MapPage.swift */,
 				F3A64FED297297AC00F34730 /* MapView.swift */,
+				2BB2E03B298A8C36009EA29E /* SearchResultListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3434902297251AD00E5FE3F /* App.swift in Sources */,
+				2BB2E03C298A8C36009EA29E /* SearchResultListView.swift in Sources */,
 				F3A64FEE297297AC00F34730 /* MapView.swift in Sources */,
 				F34349192972604200E5FE3F /* AppModel.swift in Sources */,
 				F3434904297251AD00E5FE3F /* Persistence.swift in Sources */,

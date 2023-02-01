@@ -7,8 +7,8 @@
 
 import CoreLocation
 
-struct LocationInfoModel {
-        
+struct LocationInfoModel: Identifiable {
+    
     /// 名称
     let name: String
     
@@ -19,7 +19,7 @@ struct LocationInfoModel {
     let wgsLongitude: CLLocationDegrees
     
     /// 唯一标识符
-    var identifier: String { "\(name)-(\(wgsLatitude),\(wgsLongitude))" }
+    var id: String { "\(name)-(\(wgsLatitude),\(wgsLongitude))" }
 }
 
 extension LocationInfoModel {
@@ -45,7 +45,7 @@ extension LocationInfoModel {
 extension LocationInfoModel {
     
     func wgsCLCircularRegion(radius: CLLocationDistance) -> CLCircularRegion {
-        return wgsLocationCoordinate2D.clRegion(identifier: identifier, radius: radius)
+        return wgsLocationCoordinate2D.clCircularRegion(identifier: id, radius: radius)
         
     }
 }

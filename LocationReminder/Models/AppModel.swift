@@ -30,7 +30,18 @@ class AppModel: NSObject, ObservableObject {
         }
         return userLocationCoordinate.gcj2wgs
     }
-    var alertMessage: String? { didSet { showAlert = alertMessage != nil } }
+    
+    var alertMessage: String? {
+        didSet {
+            if Thread.current.isMainThread {
+                showAlert = alertMessage != nil
+            } else {
+                DispatchQueue.main.async {
+                    self.showAlert = self.alertMessage != nil
+                }
+            }
+        }
+    }
     
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -44,30 +55,11 @@ class AppModel: NSObject, ObservableObject {
     }()
     
     func startWork() {
-        startMonitorRegion()
         locationManager.startUpdatingLocation()
     }
     
     func stopWork() {
-        stopMonitorRegion()
         locationManager.stopUpdatingLocation()
-    }
-    
-    func startMonitorRegion() {
-        stopMonitorRegion()
-        LocationInfoModel.monitorRegions.forEach { locationManager.startMonitoring(for: $0) }
-    }
-    
-    func stopMonitorRegion() {
-        locationManager.monitoredRegions.forEach { locationManager.stopMonitoring(for: $0) }
-    }
-    
-    func locateCurrentUser() {
-        guard let coordinate = userMKLocation?.coordinate
-        else {
-            return
-        }
-        displayRegion = coordinate.mkCoordianteRegion
     }
 }
 
@@ -83,5 +75,40 @@ WGS-84: \(wgsCoordinate.latitude), \(wgsCoordinate.longitude)
 GCJ-02: \(mkLocation.latitude), \(mkLocation.longitude)
 """
         UIPasteboard.general.string = alertMessage
+    }
+    
+    func locateCurrentUser() {
+        guard let coordinate = userMKLocation?.coordinate
+        else {
+            return
+        }
+        displayRegion = coordinate.mkCoordianteRegion
+    }
+    
+    func setupMonitorRegions() {
+        showAllPendingNotificationRequest()
+        clearAllPendingNotificationRequests()
+        requestNotificationPermission { granted, error in
+            guard granted
+            else {
+                self.alertMessage = "需要授权推送，才能接收到位置提醒"
+                return
+            }
+            UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+                let pendingRequestIds = requests.map { $0.identifier }
+                let regions = LocationInfoModel.monitorCircularRegions.filter { region in
+                    return !pendingRequestIds.contains(region.identifier)
+                }
+                self.triggerLocationNotification(regions: regions)
+            }
+        }
+    }
+    
+    func showAllPendingNotificationRequest() {
+        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+            requests.forEach { request in
+                print(request.identifier)
+            }
+        }
     }
 }

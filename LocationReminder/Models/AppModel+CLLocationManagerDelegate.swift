@@ -20,32 +20,11 @@ extension AppModel: CLLocationManagerDelegate {
             } else {
                 alertMessage = "定位服务不可用，App不能正常使用"
             }
-        case .authorizedWhenInUse:
-            manager.requestAlwaysAuthorization()
-        case .authorizedAlways:
-            requestNotificationPermission { [weak self] granted, error in
-                guard granted
-                else {
-                    self?.alertMessage = "需要授权推送，才能接收到位置提醒"
-                    return
-                }
-            }
+        case .authorizedWhenInUse, .authorizedAlways:
+            setupMonitorRegions()
         default:
             break
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        let message = "进入区域: \(region.identifier)"
-        triggerNotification(message)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        let message = "离开区域: \(region.identifier)"
-        triggerNotification(message)
-    }
 }

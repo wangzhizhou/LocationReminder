@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2BAC78112987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC78102987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift */; };
-		2BAC7813298786AE001D5639 /* AppModel+PredefineLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC7812298786AE001D5639 /* AppModel+PredefineLocations.swift */; };
 		2BAC7815298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC7814298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift */; };
 		2BAC781929878773001D5639 /* CLLocationCoordinate2D+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC781829878773001D5639 /* CLLocationCoordinate2D+Utils.swift */; };
 		2BAC781B29878780001D5639 /* CLCircularRegion+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */; };
 		2BAC8C6C2989180D001D5639 /* LocationTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC8C6B2989180D001D5639 /* LocationTransform.swift */; };
+		2BAC997E298A043D001D5639 /* LocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC997D298A043D001D5639 /* LocationInfoModel.swift */; };
+		2BAC9980298A0A20001D5639 /* LocationModel+Predefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC997F298A0A20001D5639 /* LocationModel+Predefine.swift */; };
 		F3434902297251AD00E5FE3F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3434901297251AD00E5FE3F /* App.swift */; };
 		F3434904297251AD00E5FE3F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3434903297251AD00E5FE3F /* Persistence.swift */; };
 		F3434907297251AD00E5FE3F /* LocationReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3434905297251AD00E5FE3F /* LocationReminder.xcdatamodeld */; };
@@ -27,12 +28,16 @@
 /* Begin PBXFileReference section */
 		2BAC780E29878203001D5639 /* Home.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Home.gpx; sourceTree = "<group>"; };
 		2BAC78102987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModel+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
-		2BAC7812298786AE001D5639 /* AppModel+PredefineLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModel+PredefineLocations.swift"; sourceTree = "<group>"; };
 		2BAC7814298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModel+UNUserNotificationCenterDelegate.swift"; sourceTree = "<group>"; };
 		2BAC781829878773001D5639 /* CLLocationCoordinate2D+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Utils.swift"; sourceTree = "<group>"; };
 		2BAC781A29878780001D5639 /* CLCircularRegion+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLCircularRegion+Utils.swift"; sourceTree = "<group>"; };
 		2BAC846D2988DAFB001D5639 /* Company.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Company.gpx; sourceTree = "<group>"; };
 		2BAC8C6B2989180D001D5639 /* LocationTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTransform.swift; sourceTree = "<group>"; };
+		2BAC997D298A043D001D5639 /* LocationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoModel.swift; sourceTree = "<group>"; };
+		2BAC997F298A0A20001D5639 /* LocationModel+Predefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationModel+Predefine.swift"; sourceTree = "<group>"; };
+		2BAC9981298A0FA0001D5639 /* tiangongyuan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = tiangongyuan.gpx; sourceTree = "<group>"; };
+		2BAC9982298A0FA0001D5639 /* xingong.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = xingong.gpx; sourceTree = "<group>"; };
+		2BAC9983298A0FA0001D5639 /* mudanyuan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mudanyuan.gpx; sourceTree = "<group>"; };
 		F34348FE297251AD00E5FE3F /* 位置提醒.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "位置提醒.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3434901297251AD00E5FE3F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F3434903297251AD00E5FE3F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -44,9 +49,6 @@
 		F34349152972525D00E5FE3F /* MapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPage.swift; sourceTree = "<group>"; };
 		F3434917297257B400E5FE3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F34349182972604200E5FE3F /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
-		F3904C66298965CF0061C3E5 /* tiangongyuan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = tiangongyuan.gpx; sourceTree = "<group>"; };
-		F3904C6729896A300061C3E5 /* mudanyuan.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mudanyuan.gpx; sourceTree = "<group>"; };
-		F3904C6829896A3E0061C3E5 /* xingong.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = xingong.gpx; sourceTree = "<group>"; };
 		F3A64FED297297AC00F34730 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,8 +68,9 @@
 			children = (
 				F34349182972604200E5FE3F /* AppModel.swift */,
 				2BAC78102987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift */,
-				2BAC7812298786AE001D5639 /* AppModel+PredefineLocations.swift */,
 				2BAC7814298786EB001D5639 /* AppModel+UNUserNotificationCenterDelegate.swift */,
+				2BAC997D298A043D001D5639 /* LocationInfoModel.swift */,
+				2BAC997F298A0A20001D5639 /* LocationModel+Predefine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -94,11 +97,11 @@
 		2BAC846C2988DAED001D5639 /* TestGPSLocations */ = {
 			isa = PBXGroup;
 			children = (
+				2BAC9983298A0FA0001D5639 /* mudanyuan.gpx */,
+				2BAC9981298A0FA0001D5639 /* tiangongyuan.gpx */,
+				2BAC9982298A0FA0001D5639 /* xingong.gpx */,
 				2BAC780E29878203001D5639 /* Home.gpx */,
 				2BAC846D2988DAFB001D5639 /* Company.gpx */,
-				F3904C66298965CF0061C3E5 /* tiangongyuan.gpx */,
-				F3904C6729896A300061C3E5 /* mudanyuan.gpx */,
-				F3904C6829896A3E0061C3E5 /* xingong.gpx */,
 			);
 			path = TestGPSLocations;
 			sourceTree = "<group>";
@@ -226,8 +229,9 @@
 				F34349162972525D00E5FE3F /* MapPage.swift in Sources */,
 				2BAC8C6C2989180D001D5639 /* LocationTransform.swift in Sources */,
 				2BAC78112987867E001D5639 /* AppModel+CLLocationManagerDelegate.swift in Sources */,
+				2BAC997E298A043D001D5639 /* LocationInfoModel.swift in Sources */,
+				2BAC9980298A0A20001D5639 /* LocationModel+Predefine.swift in Sources */,
 				F3434907297251AD00E5FE3F /* LocationReminder.xcdatamodeld in Sources */,
-				2BAC7813298786AE001D5639 /* AppModel+PredefineLocations.swift in Sources */,
 				2BAC781B29878780001D5639 /* CLCircularRegion+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

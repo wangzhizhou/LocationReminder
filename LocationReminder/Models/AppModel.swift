@@ -43,14 +43,6 @@ class AppModel: NSObject, ObservableObject {
         return manager
     }()
     
-    private let monitorRegions: [CLRegion] = [
-        mudanyuan,
-        xingong,
-        tianGongYuan,
-        home,
-        company,
-    ]
-    
     func startWork() {
         startMonitorRegion()
         locationManager.startUpdatingLocation()
@@ -63,7 +55,7 @@ class AppModel: NSObject, ObservableObject {
     
     func startMonitorRegion() {
         stopMonitorRegion()
-        monitorRegions.forEach { locationManager.startMonitoring(for: $0) }
+        LocationInfoModel.monitorRegions.forEach { locationManager.startMonitoring(for: $0) }
     }
     
     func stopMonitorRegion() {

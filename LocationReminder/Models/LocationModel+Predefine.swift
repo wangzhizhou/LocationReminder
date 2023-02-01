@@ -41,11 +41,11 @@ extension LocationInfoModel {
     
     static var monitorCircularRegions: [CLCircularRegion] {
         return [
-            mudanyuan.wgsCLCircularRegion(radius: 200),
-            xingong.wgsCLCircularRegion(radius: 200),
-            tiangongyuan.wgsCLCircularRegion(radius: 200),
-            home.wgsCLCircularRegion(radius: 50),
-            company.wgsCLCircularRegion(radius: 50),
+            mudanyuan.wgsCLCircularRegion(),
+            xingong.wgsCLCircularRegion(),
+            tiangongyuan.wgsCLCircularRegion(),
+            home.wgsCLCircularRegion(),
+            company.wgsCLCircularRegion(),
         ]
     }
 }

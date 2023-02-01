@@ -44,7 +44,7 @@ extension LocationInfoModel {
 
 extension LocationInfoModel {
     
-    func wgsCLCircularRegion(radius: CLLocationDistance) -> CLCircularRegion {
+    func wgsCLCircularRegion(radius: CLLocationDistance = 200) -> CLCircularRegion {
         return wgsLocationCoordinate2D.clCircularRegion(identifier: id, radius: radius)
         
     }

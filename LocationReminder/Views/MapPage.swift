@@ -23,15 +23,6 @@ struct MapPage: View {
                     showUserLocation: $appModel.showUserLocation
             )
             .ignoresSafeArea()
-            .alert("提示", isPresented: $appModel.showAlert) {
-            } message: {
-                if let alertMessage = appModel.alertMessage {
-                    Text(alertMessage)
-                }
-            }
-            .onAppear {
-                appModel.startWork()
-            }
             .overlay(alignment: .bottomTrailing) {
                 Button {
                     appModel.locateCurrentUser()
@@ -44,9 +35,22 @@ struct MapPage: View {
                 .frame(width: 44, height: 44)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 5))
             }
+            .statusBarHidden()
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                appModel.startWork()
+            }
+            .fullScreenCover(isPresented: $isPresentSearchResultList) {
+                SearchResultListView(searchKeyword: $searchText, searchResults: $mkMapItems)
+                    .statusBarHidden()
+            }
+            .alert("提示", isPresented: $appModel.showAlert) {
+            } message: {
+                if let alertMessage = appModel.alertMessage {
+                    Text(alertMessage)
+                }
+            }
         }
-        .statusBarHidden()
-        .navigationBarHidden(true)
         .searchable(text: $searchText, prompt: Text("Search a Location"))
         .onSubmit(of: .search) {
             let request = MKLocalSearch.Request()
@@ -61,10 +65,6 @@ struct MapPage: View {
                 isPresentSearchResultList = !response.mapItems.isEmpty
                 self.mkMapItems = response.mapItems
             }
-        }
-        .fullScreenCover(isPresented: $isPresentSearchResultList) {
-            SearchResultListView(searchKeyword: searchText, searchResults: $mkMapItems)
-                .statusBarHidden()
         }
     }
 }

@@ -24,7 +24,7 @@ extension CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: gcjLat, longitude: gcjLon)
     }
     
-    func mkCoordianteRegion(radius: CLLocationDistance = 500) -> MKCoordinateRegion {
+    func mkCoordianteRegion(radius: CLLocationDistance = 250) -> MKCoordinateRegion {
         MKCoordinateRegion(center: self, latitudinalMeters: radius, longitudinalMeters: radius)
     }
 }

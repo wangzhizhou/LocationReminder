@@ -14,7 +14,7 @@ struct SearchResultListView: View {
     
     @EnvironmentObject private var appModel: AppModel
     
-    let searchKeyword: String
+    @Binding var searchKeyword: String
     
     @Binding var searchResults: [MKMapItem]
     
@@ -53,6 +53,6 @@ struct SearchResultListView: View {
 
 struct SearchResultListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResultListView(searchKeyword: "天宫院", searchResults: .constant([]))
+        SearchResultListView(searchKeyword: .constant("天宫院"), searchResults: .constant([]))
     }
 }

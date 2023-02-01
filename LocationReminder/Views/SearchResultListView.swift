@@ -31,7 +31,9 @@ struct SearchResultListView: View {
                         .resizable()
                         .frame(width: 25, height: 25)
                 }
+                .padding(.trailing, 10)
             }
+            .padding(.top, 44)
             
             Text("\"\(searchKeyword)\" 搜索结果")
             
